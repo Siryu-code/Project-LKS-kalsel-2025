@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBSKUY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-wrapper">
+
+        <!-- ====== WELCOME SCREEN ====== -->
+        <div id="welcome-screen">
+            <img src="Images/logo.png" id="logo" alt="BOMBSKUY">
+            <input type="text" id="username-input" placeholder="Input Username" autocomplete="off">
+            <select id="level-select">
+                <option value="" disabled selected>Select Level</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <div id="welcome-buttons">
+                <button id="play-btn" disabled>Play</button>
+                <button id="instruction-btn">Instruction</button>
+            </div>
+        </div>
+
+        <!-- ====== INSTRUCTION POPUP ====== -->
+        <div id="instruction-popup" class="hidden">
+            <div id="instruction-box">
+                <button id="close-instruction">X</button>
+                <h2>How to Play</h2>
+                <ol>
+                    <li>Input username</li>
+                    <li>Put the bomb</li>
+                    <li>Blow up as many walls as possible</li>
+                    <li>Blow up enemies</li>
+                    <li>Enjoy!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ====== COUNTDOWN ====== -->
+        <div id="countdown-overlay" class="hidden">
+            <div id="countdown-number"></div>
+        </div>
+
+        <!-- ====== GAME SCREEN ====== -->
+        <div id="game-screen" class="hidden">
+            <div id="gameboard-area">
+                <div id="gameboard"></div>
+            </div>
+            <div id="sidebar">
+                <img src="Images/logo_white.png" id="sidebar-logo" alt="BOMBSKUY">
+                <div id="player-info">
+                    <p>Player : <span id="player-name"></span></p>
+                    <p>Time &nbsp;&nbsp;: <span id="timer">00:00</span></p>
+                </div>
+                <div id="hearts-display"></div>
+                <div class="stat-row">
+                    <img src="Images/wall_crack.png" alt="walls destroyed">
+                    <span>= <span id="walls-count">0</span></span>
+                </div>
+                <div class="stat-row">
+                    <img src="Images/tnt.png " alt="tnt collected">
+                    <span>= <span id="tnt-count">0</span></span>
+                </div>
+                <div class="stat-row">
+                    <img src="Images/ice.png" alt="ice collected">
+                    <span>= <span id="ice-count">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== PAUSE POPUP ====== -->
+        <div id="pause-popup" class="hidden">
+            <div id="pause-box">
+                <h2>PAUSED</h2>
+                <button id="continue-btn">Continue</button>
+            </div>
+        </div>
+
+        <!-- ====== GAME OVER SCREEN ====== -->
+        <div id="gameover-screen" class="hidden">
+            <h1>Game Over!</h1>
+            <p id="gameover-msg"></p>
+            <div id="gameover-stats">
+                <img src="Images/wall_crack.png" alt="walls">
+                <span>= <span id="go-walls">0</span></span>
+                <img src="Images/tnt.png" alt="tnt">
+                <span>= <span id="go-tnt">0</span></span>
+                <img src="Images/ice.png" alt="ice">
+                <span>= <span id="go-ice">0</span></span>
+            </div>
+            <div id="gameover-buttons">
+                <button id="save-score-btn">Save Score</button>
+                <button id="leaderboard-btn">Leaderboards</button>
+            </div>
+        </div>
+
+        <!-- ====== LEADERBOARD SCREEN ====== -->
+        <div id="leaderboard-screen" class="hidden">
+            <h1>Leaderboards</h1>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Player Name</th>
+                        <th>Time</th>
+                        <th><img src="Images/wall_crack.png" alt="walls"></th>
+                        <th><img src="Images/tnt.png" alt="tnt"></th>
+                        <th><img src="Images/ice.png" alt="ice"></th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body"></tbody>
+            </table>
+            <div id="leaderboard-buttons">
+                <button id="play-again-btn">Play Again</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
